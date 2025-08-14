@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "bc1a822f-fd6c-45fd-98bb-dc3dbda8b8d8",
+		"name": "Todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43728621",
+		"_collection_link": "https://divyanshi-2424582.postman.co/workspace/task~975724f9-436b-437e-8f55-fc2a3f76c67f/collection/43728621-bc1a822f-fd6c-45fd-98bb-dc3dbda8b8d8?action=share&source=collection_link&creator=43728621"
+	},
+	"item": [
+		{
+			"name": "Create Todo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{vault:json-web-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "img",
+							"type": "file",
+							"src": "postman-cloud:///1f078fc7-54f5-4330-a76e-2b94cb681aa7"
+						},
+						{
+							"key": "title",
+							"value": "Test1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/todos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read_all _Todos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{vault:json-web-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "img",
+							"type": "file",
+							"src": "postman-cloud:///1f078fc7-54f5-4330-a76e-2b94cb681aa7"
+						},
+						{
+							"key": "title",
+							"value": "Test1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/todos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "single Todo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{vault:json-web-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "img",
+							"type": "file",
+							"src": "postman-cloud:///1f078fc7-54f5-4330-a76e-2b94cb681aa7"
+						},
+						{
+							"key": "title",
+							"value": "Test1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/todos/689dbffcdb11c2b683a3f06f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos",
+						"689dbffcdb11c2b683a3f06f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Todo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{vault:json-web-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "img",
+							"type": "file",
+							"src": "postman-cloud:///1f078fd4-d90f-4550-a08f-9a7b4dc54d1e"
+						},
+						{
+							"key": "title",
+							"value": "Test2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/todos/689dbffcdb11c2b683a3f06f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos",
+						"689dbffcdb11c2b683a3f06f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Todo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{vault:json-web-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "img",
+							"type": "file",
+							"src": "postman-cloud:///1f078fd4-d90f-4550-a08f-9a7b4dc54d1e"
+						},
+						{
+							"key": "title",
+							"value": "Test2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/todos/689dbffcdb11c2b683a3f06f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos",
+						"689dbffcdb11c2b683a3f06f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

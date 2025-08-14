@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "236c9cf7-4f87-4961-8feb-6dc6c5736f51",
+		"name": "UserandAdmin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43728621",
+		"_collection_link": "https://divyanshi-2424582.postman.co/workspace/task~975724f9-436b-437e-8f55-fc2a3f76c67f/collection/43728621-236c9cf7-4f87-4961-8feb-6dc6c5736f51?action=share&source=collection_link&creator=43728621"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Tabrez1\",\r\n    \"email\":\"Tabrez.hira1@gmail.com\",\r\n    \"password\":\"Hamza.447\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"Tabrez.hira@gmail.com\",\r\n    \"password\":\"Hamza.447\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "make-admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Tabrez1\",\r\n    \"email\":\"Tabrez.hira1@gmail.com\",\r\n    \"password\":\"Hamza.447\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/make-admin/689db75e1d5cea55b0901c80",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"make-admin",
+						"689db75e1d5cea55b0901c80"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Admin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWRiNzVlMWQ1Y2VhNTViMDkwMWM4MCIsImlhdCI6MTc1NTE2NzMwMiwiZXhwIjoxNzU1MjUzNzAyfQ.GuUHcGvojm5KtmZ4IufliLj0Ku9j0-XdD73Fn6ze6RA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Tabrez1\",\r\n    \"email\":\"Tabrez.hira1@gmail.com\",\r\n    \"password\":\"Hamza.447\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWRiNzVlMWQ1Y2VhNTViMDkwMWM4MCIsImlhdCI6MTc1NTE2NzMwMiwiZXhwIjoxNzU1MjUzNzAyfQ.GuUHcGvojm5KtmZ4IufliLj0Ku9j0-XdD73Fn6ze6RA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Tabrez1\",\r\n    \"email\":\"Tabrez.hira1@gmail.com\",\r\n    \"password\":\"Hamza.447\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWRiNzVlMWQ1Y2VhNTViMDkwMWM4MCIsImlhdCI6MTc1NTE2NzMwMiwiZXhwIjoxNzU1MjUzNzAyfQ.GuUHcGvojm5KtmZ4IufliLj0Ku9j0-XdD73Fn6ze6RA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Tabrez1\",\r\n    \"email\":\"Tabrez.hira1@gmail.com\",\r\n    \"password\":\"Hamza.447\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Block user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWRiNzVlMWQ1Y2VhNTViMDkwMWM4MCIsImlhdCI6MTc1NTE2NzMwMiwiZXhwIjoxNzU1MjUzNzAyfQ.GuUHcGvojm5KtmZ4IufliLj0Ku9j0-XdD73Fn6ze6RA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/block/689db6701d5cea55b0901c7e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"block",
+						"689db6701d5cea55b0901c7e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UnBlock user Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWRiNzVlMWQ1Y2VhNTViMDkwMWM4MCIsImlhdCI6MTc1NTE2NzMwMiwiZXhwIjoxNzU1MjUzNzAyfQ.GuUHcGvojm5KtmZ4IufliLj0Ku9j0-XdD73Fn6ze6RA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/unblock/689db6701d5cea55b0901c7e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"unblock",
+						"689db6701d5cea55b0901c7e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
