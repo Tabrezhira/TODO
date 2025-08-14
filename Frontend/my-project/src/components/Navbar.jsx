@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Navbar() {
   const [username, setUsername] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     axios.get('http://localhost:3000/users/me', { withCredentials: true })
@@ -17,7 +18,7 @@ export default function Navbar() {
         setUsername('');
         setIsAdmin(false);
       });
-  }, []);
+  }, [location]); // Re-run when route changes
 
   const handleLogout = async () => {
     await axios.post('http://localhost:3000/users/logout', {}, { withCredentials: true });

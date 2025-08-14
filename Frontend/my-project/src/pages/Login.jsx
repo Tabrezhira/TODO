@@ -29,6 +29,10 @@ export default function Login() {
       const res = await axios.post('http://localhost:3000/users/login', form, { withCredentials: true });
 
       if (res.data.token) {
+        if (res.data.user?.isBlocked) {
+          alert('Your account is blocked. Please contact admin.');
+          return;
+        }
         alert('Login successful');
         const userData = {
           token: res.data.token,

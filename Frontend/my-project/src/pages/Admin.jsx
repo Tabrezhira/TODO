@@ -36,6 +36,16 @@ export default function Admin() {
     }
   };
 
+  const handleUnblock = async id => {
+    if (!window.confirm('Are you sure you want to unblock this user?')) return;
+    try {
+      await axios.post(`http://localhost:3000/users/unblock/${id}`, {}, { withCredentials: true });
+      fetchUsers();
+    } catch (err) {
+      alert('Failed to unblock user');
+    }
+  };
+
   return (
     <div className="max-w-2xl mx-auto mt-10 bg-white p-8 rounded shadow">
       <h2 className="text-2xl font-bold mb-6 text-center">Registered Users</h2>
@@ -63,6 +73,14 @@ export default function Admin() {
                     className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition"
                   >
                     Block
+                  </button>
+                )}
+                {user.isBlocked && !user.isAdmin && (
+                  <button
+                    onClick={() => handleUnblock(user._id)}
+                    className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 transition"
+                  >
+                    Unblock
                   </button>
                 )}
                 {user.isBlocked && <span className="text-red-500 font-semibold">Blocked</span>}

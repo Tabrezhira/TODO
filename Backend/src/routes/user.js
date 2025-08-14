@@ -80,6 +80,21 @@ router.post('/block/:id', authenticateJWT, adminOnly, async (req, res) => {
     }
 });
 
+// Unblock user route (admin only)
+router.post('/unblock/:id', authenticateJWT, adminOnly, async (req, res) => {
+    try {
+        const user = await User.findByIdAndUpdate(
+            req.params.id,
+            { isBlocked: false },
+            { new: true }
+        );
+        if (!user) return res.status(404).json({ error: 'User not found' });
+        res.json({ message: 'User unblocked', user });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 // Make user admin (admin only)
 router.post('/make-admin/:id', async (req, res) => {
     try {
