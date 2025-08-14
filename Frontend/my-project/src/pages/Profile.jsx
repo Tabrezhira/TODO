@@ -13,7 +13,7 @@ function Profile() {
       .catch(() => navigate('/login'));
   }, [navigate]);
 
-  if (!user) return null; // Or a spinner
+  if (!user) return null; 
   return (
     <div className="max-w-md mx-auto mt-10 bg-white p-8 rounded shadow">
       <h2 className="text-2xl font-bold mb-4 text-center">Profile</h2>

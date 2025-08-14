@@ -6,7 +6,7 @@ export default function Admin() {
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
 
-  // Check admin authentication on mount
+
   useEffect(() => {
     axios.get('http://localhost:3000/users/me', { withCredentials: true })
       .then(res => {
@@ -14,7 +14,7 @@ export default function Admin() {
       })
       .catch(() => navigate('/login'));
     fetchUsers();
-    // eslint-disable-next-line
+
   }, []);
 
   const fetchUsers = async () => {

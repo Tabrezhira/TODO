@@ -13,12 +13,12 @@ export default function Home() {
   const [editImg, setEditImg] = useState(null);
   const navigate = useNavigate();
 
-  // Check authentication on mount
+
   useEffect(() => {
     axios.get('http://localhost:3000/users/me', { withCredentials: true })
       .catch(() => navigate('/login'));
     fetchTodos();
-    // eslint-disable-next-line
+
   }, []);
 
   const fetchTodos = async () => {
@@ -93,7 +93,7 @@ export default function Home() {
     }
   };
 
-  // Filter and sort todos
+
   const filteredTodos = todos
     .filter(todo => todo.title.toLowerCase().includes(search.toLowerCase()))
     .sort((a, b) => {

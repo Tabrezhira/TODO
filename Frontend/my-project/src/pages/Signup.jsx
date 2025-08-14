@@ -32,7 +32,7 @@ export default function Signup() {
           navigate('/');
         }
       })
-      .catch(() => {}); // If not logged in, stay on signup
+      .catch(() => {}); 
   }, [navigate]);
 
   return (

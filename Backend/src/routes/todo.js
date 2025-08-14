@@ -29,7 +29,7 @@ router.post('/', authenticateJWT, upload.single('img'), async (req, res) => {
         const todo = new Todo({
             title: req.body.title,
             img: req.file ? req.file.path : undefined,
-            createdBy: req.user.id // Use logged-in user's ID
+            createdBy: req.user.id 
             
         });
       

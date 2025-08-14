@@ -18,7 +18,7 @@ export default function Navbar() {
         setUsername('');
         setIsAdmin(false);
       });
-  }, [location]); // Re-run when route changes
+  }, [location]); 
 
   const handleLogout = async () => {
     await axios.post('http://localhost:3000/users/logout', {}, { withCredentials: true });

@@ -7,7 +7,7 @@ export default function Login() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  // Check JWT token on mount
+
   useEffect(() => {
     axios.get('http://localhost:3000/users/me', { withCredentials: true })
       .then(res => {
@@ -57,7 +57,7 @@ export default function Login() {
     }
   };
 
-  if (loading) return null; // Or a spinner
+  if (loading) return null; 
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
